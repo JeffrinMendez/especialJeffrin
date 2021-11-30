@@ -14,7 +14,7 @@ const Calificaciones = () => {
 
     const calcular = () => {
 
-        setEstudiantes([...Estudiantes, Estudiante])
+       
         let divide = 2
         let calculo = ((parseFloat(PrimerP) + (parseFloat(SegundoP))) / divide)
 
@@ -23,7 +23,8 @@ const Calificaciones = () => {
         setFinal(calculo)
 
         
-        setCrearLista([...CrearLista, Estudiante])
+        setCrearLista([...CrearLista, Final.toString()])
+        setEstudiantes([...Estudiantes, Estudiante])
 
    
 
@@ -81,11 +82,11 @@ const Calificaciones = () => {
 
                 </View>
                 {
-                    CrearLista.map((lista, index) => (
+                    Estudiantes.map((lista, index) => (
                         <View style={styles.map}>
                             <Text style={styles.nombre} >{lista}</Text>
                             <Text style={styles.nombre}>  ________________________________ </Text>
-                            <Text  style={styles.nota} >Nota Final: {Final}</Text>
+                            <Text  style={styles.nota} >Nota Final: {CrearLista[index]}</Text>
 
 
 
