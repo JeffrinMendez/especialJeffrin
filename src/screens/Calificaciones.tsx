@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, ScrollView } from 'react-native';
-import { useEffect } from 'react';
 
 const Calificaciones = () => {
 
@@ -10,8 +9,8 @@ const Calificaciones = () => {
     const [SegundoP, setSegundoP] = useState<string>('')
     const [Final, setFinal] = useState<number>(0)
     const [CrearLista, setCrearLista] = useState<string[]>([])
-
-
+    
+  
 
     const calcular = () => {
 
@@ -23,15 +22,15 @@ const Calificaciones = () => {
 
         setFinal(calculo)
 
-
-        mostrarLista()
-    }
-    const mostrarLista = () => {
+        
         setCrearLista([...CrearLista, Estudiante])
+
+   
+
+        
     }
-
-
-
+   
+   
 
     return (
 
@@ -82,11 +81,11 @@ const Calificaciones = () => {
 
                 </View>
                 {
-                    CrearLista.map((lista, index, result) => (
+                    CrearLista.map((lista, index) => (
                         <View style={styles.map}>
-                            <Text style={styles.nombre} >{Estudiante}</Text>
+                            <Text style={styles.nombre} >{lista}</Text>
                             <Text style={styles.nombre}>  ________________________________ </Text>
-                            <Text style={styles.nota} >Nota Final: {Final}</Text>
+                            <Text  style={styles.nota} >Nota Final: {Final}</Text>
 
 
 
@@ -167,7 +166,7 @@ const styles = StyleSheet.create({
 
     },
     nombre: {
-        marginTop: 5,
+        marginTop: '5%',
         marginHorizontal: 20,
         color: '#05786A',
         fontSize: 24
